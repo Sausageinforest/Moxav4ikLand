@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #A9DFBF;
+            text-align: left;
+            padding: 40px;
+            color: #4c535b;
+            position: relative;
+            /* Устанавливаем относительное позиционирование для body */
+        }
+
+        h1, h2 {
+            font-family: 'Arial', sans-serif;
+        }
+
+        button {
+            position: absolute;
+            /* Устанавливаем абсолютное позиционирование для кнопки */
+            top: 10px;
+            /* Располагаем кнопку сверху на 10px */
+            left: 10px;
+            /* Располагаем кнопку слева на 10px */
+            background-color: #c0e2ce;
+            color: #282a36;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid #c0e2ce;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        hr {
+            border: 1px solid #93c2a6;
+            /* Цвет и толщина линии */
+            margin-top: 20px;
+            /* Отступ от верхнего элемента */
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar-content {
+            padding: 20px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content {
+            flex: 1;
+            padding: 16px;
+            transition: margin-left .5s;
+        }
+
+        .menu-toggle {
+            font-size: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #111;
+            padding: 8px 16px;
+            position: fixed;
+            z-index: 2;
+            top: 20px;
+            left: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="menu-toggle" onclick="toggleMenu()">Меню</button>
+        <div class="sidebar" id="sidebar" onclick="closeMenu()">
+            <div class="sidebar-content">
+                <ul>
+                    <li><a href="#" onclick="openPage('index.html')">Главная</a></li>
+                    <li><a href="#" onclick="openPage('about.html')">О нас</a></li>
+                    <li><a href="#" onclick="openPage('contacts.html')">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <hr>
+            <h1>Привет</h1>
+            <h2>Я первая страница</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+        }
+
+        function closeMenu() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.style.width = '0';
+        }
+
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
