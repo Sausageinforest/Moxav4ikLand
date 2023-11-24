@@ -101,38 +101,38 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <button class="menu-toggle" onclick="toggleMenu()">Меню</button>
-        <div class="sidebar" id="sidebar" onclick="closeMenu()">
-            <div class="sidebar-content">
-                <ul>
-                    <li><a href="#" onclick="openPage('index.html')">Главная</a></li>
-                    <li><a href="#" onclick="openPage('about.html')">О нас</a></li>
-                    <li><a href="#" onclick="openPage('contacts.html')">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="content">
-            <hr>
-            <h1>Привет</h1>
-            <h2>Я первая страница</h2>
+<div class="container">
+    <button class="menu-toggle" onclick="toggleMenu()">Меню</button>
+    <div class="sidebar" id="sidebar" onclick="closeMenu()">
+        <div class="sidebar-content">
+            <ul>
+                <li><a href="#" onclick="openPage('index.html')">Главная</a></li>
+                <li><a href="#" onclick="openPage('about.html')">О нас</a></li>
+                <li><a href="#" onclick="openPage('contacts.html')">Контакты</a></li>
+            </ul>
         </div>
     </div>
-    <script src="script.js"></script>
-    <script>
-        function toggleMenu() {
-            var sidebar = document.getElementById('sidebar');
-            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
-        }
+    <div class="content">
+        <hr>
+        <h1>Привет</h1>
+        <h2>О нас</h2>
+    </div>
+</div>
+<script src="script.js"></script>
+<script>
+    function toggleMenu() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+    }
 
-        function closeMenu() {
-            var sidebar = document.getElementById('sidebar');
-            sidebar.style.width = '0';
-        }
+    function closeMenu() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.style.width = '0';
+    }
 
-        function openPage(page) {
-            window.location.href = page;
-        }
-    </script>
+    function openPage(page) {
+        window.location.href = page;
+    }
+</script>
 </body>
 </html>
