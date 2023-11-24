@@ -11,7 +11,6 @@
             padding: 40px;
             color: #4c535b;
             position: relative;
-            /* Устанавливаем относительное позиционирование для body */
         }
 
         h1, h2 {
@@ -20,11 +19,8 @@
 
         button {
             position: absolute;
-            /* Устанавливаем абсолютное позиционирование для кнопки */
             top: 10px;
-            /* Располагаем кнопку сверху на 10px */
             left: 10px;
-            /* Располагаем кнопку слева на 10px */
             background-color: #c0e2ce;
             color: #282a36;
             padding: 10px 20px;
@@ -36,9 +32,7 @@
 
         hr {
             border: 1px solid #93c2a6;
-            /* Цвет и толщина линии */
             margin-top: 20px;
-            /* Отступ от верхнего элемента */
         }
 
         .container {
@@ -98,6 +92,12 @@
             top: 20px;
             left: 48px;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -116,6 +116,7 @@
             <hr>
             <h1>Привет</h1>
             <h2>Я первая страница</h2>
+            <img src="image.jpg" alt="Изображение">
         </div>
     </div>
     <script src="script.js"></script>
