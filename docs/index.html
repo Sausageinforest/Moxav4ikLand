@@ -1,141 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #A9DFBF;
-            text-align: left;
-            padding: 40px;
-            color: #4c535b;
-            position: relative;
-        }
+  <meta charset="UTF-8">
+  <title>Мой веб-сайт</title>
+  <style>
+    body {
+      background-image: url("bg.jpg"); /* замените на свой файл фона */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      height: 100vh; /* высота всего окна браузера */
+      margin: 0; /* убираем отступы по умолчанию */
+      display: flex;
+      flex-direction: column;
+    }
 
-        h1, h2 {
-            font-family: 'Arial', sans-serif;
-        }
+    .container {
+      width: 80%;
+      margin: auto;
+      flex: 1; /* растягиваем контейнер, чтобы занимал всё доступное пространство */
+    }
 
-        button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: #c0e2ce;
-            color: #282a36;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: 2px solid #c0e2ce;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 50px;
+      background-color: #2E8B57;
+    }
 
-        hr {
-            border: 1px solid #93c2a6;
-            margin-top: 20px;
-        }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      transition: color 0.3s; /* плавное изменение цвета текста */
+    }
 
-        .container {
-            display: flex;
-        }
+    .nav a:hover {
+      color: #3CB371; /* цвет при наведении */
+    }
 
-        .sidebar {
-            height: 100vh;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
+    .footer {
+      text-align: center;
+      background-color: #2E8B57;
+      padding: 10px;
+      margin-top: auto; /* размещаем футер внизу */
+    }
 
-        .sidebar-content {
-            padding: 20px;
-        }
-
-        .sidebar a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .content {
-            flex: 1;
-            padding: 16px;
-            transition: margin-left .5s;
-        }
-
-        .menu-toggle {
-            font-size: 20px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #111;
-            padding: 8px 16px;
-            position: fixed;
-            z-index: 2;
-            top: 20px;
-            left: 48px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 0px;
-            right: 110px;
-        }
-    </style>
+    .footer p {
+      font-size: 14px;
+      margin: 0; /* убираем отступы по умолчанию */
+    }
+  </style>
 </head>
 <body>
-    <img src="image.png" alt="Изображение">
-    <div class="container">
-        <button class="menu-toggle" onclick="toggleMenu()">Меню</button>
-        <div class="sidebar" id="sidebar" onclick="closeMenu()">
-            <div class="sidebar-content">
-                <ul>
-                    <li><a href="#" onclick="openPage('index.html')">Главная</a></li>
-                    <li><a href="#" onclick="openPage('about.html')">О нас</a></li>
-                    <li><a href="#" onclick="openPage('contacts.html')">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="content">
-            <hr>
-            <h1>Привет</h1>
-            <h2>Я первая страница</h2>
-        </div>
+  <div class="container">
+    <div class="nav">
+      <a href="index.html">Главная</a>
+      <a href="about.html">О нас</a>
+      <a href="contacts.html">Контакты</a>
     </div>
-    <script src="script.js"></script>
-    <script>
-        function toggleMenu() {
-            var sidebar = document.getElementById('sidebar');
-            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
-        }
-
-        function closeMenu() {
-            var sidebar = document.getElementById('sidebar');
-            sidebar.style.width = '0';
-        }
-
-        function openPage(page) {
-            window.location.href = page;
-        }
-    </script>
+  </div>
+  <footer class="footer">
+    <p>© 2024 Мой сайт. Все права защищены.</p>
+  </footer>
 </body>
 </html>
-
