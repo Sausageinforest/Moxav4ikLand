@@ -33,11 +33,12 @@
 
     .background-image {
       position: absolute;
-      top: 100px;
-      left: -0px;
-      right: -0px;
-      bottom: 100px;
-      background-image: url("old_stone.jpg");
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1; /* Перемещаем изображение фона ниже текста */
+      background-image: url("stone.jpg");
       background-repeat: repeat;
       background-size: auto 100px;
     }
@@ -57,6 +58,7 @@
       text-decoration: none;
       padding: 10px;
       transition: color 0.3s;
+      scroll-behavior: smooth; /* Плавный переход */
     }
 
     .nav a:hover {
@@ -84,8 +86,43 @@
         width: 100%;
       }
       .background-image {
-        display: none;
+        background-size: cover; /* Изменяем размер фона на cover */
       }
+    }
+
+    .play-button {
+      position: absolute;
+      top: calc(480px + 20px); /* Передвигаем кнопку под надписью и добавляем дополнительный отступ 20px */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #3CB371;
+      padding: 60px 180px; /* Увеличиваем отступы вокруг текста кнопки */
+      border-radius: 8px; /* Увеличиваем радиус скругления углов */
+    }
+
+    .play-button a {
+      color: white;
+      text-decoration: none;
+      font-size: 80px; /* Увеличиваем размер шрифта */
+    }
+
+    .play-button:hover {
+      background-color: #2E8B57;
+    }
+
+    .images {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 700px; /* Добавляем отступ между кнопкой и изображениями */
+    }
+
+    .images img {
+      width: 60%; /* Задаем ширину изображений */
+      max-width: 250px; /* Устанавливаем максимальную ширину */
+      height: auto; /* Позволяет изображениям сохранять пропорции */
+    }
+    h1 {
+      color: #01ff22; /* Зелёно-салатовый цвет текста */
     }
   </style>
 </head>
@@ -97,9 +134,19 @@
       <a href="about.html">О нас</a>
       <a href="contacts.html">Контакты</a>
     </div>
+    <h1 style="position: absolute; top: 200px; left: 0; right: 0; z-index: 1;">Добро пожаловать на Moxav4ikLand!</h1>
+    <div class="play-button">
+      <a href="https://discord.gg/GDg4spdxxW" target="_blank">Играть!</a>
+    </div>
+    <div class="images">
+      <img src="1.jpg" alt="Image 1">
+      <img src="2.jpg" alt="Image 2">
+      <img src="3.jpg" alt="Image 3">
+    </div>
   </div>
   <footer class="footer">
     <p>© 2024 Мой сайт. Все права защищены.</p>
   </footer>
 </body>
 </html>
+
